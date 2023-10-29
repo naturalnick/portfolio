@@ -70,8 +70,8 @@ export default function Projects() {
 					description={
 						<>
 							A cloud function for generating image thumbnails from
-							videos uploaded to Firebase deployed as a public extension
-							on Firebase Extensions Hub. This was a freelance project
+							videos uploaded to Firebase deployed as a free extension on
+							Firebase Extensions Hub. This was a freelance project
 							converted into something I hope people will find useful.
 							<br />
 							<br />
