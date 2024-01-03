@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import mockexDashboard from "../assets/mockex-dashboard.png";
 import burble from "../assets/burble.png";
-import twilighter from "../assets/twilighter.png";
-import naybiz from "../assets/naybiz.png";
 import generateThumbnails from "../assets/generate-thumbnails-code.png";
+import mockexDashboard from "../assets/mockex-dashboard.png";
+import naybiz from "../assets/naybiz.png";
+import twilighter from "../assets/twilighter.png";
 
 export default function Projects() {
 	return (
@@ -46,7 +46,6 @@ export default function Projects() {
 							tracking portfolio changes after purchases.
 						</>
 					}
-					demoLink="https://mockex.herokuapp.com"
 					sourceLink="https://github.com/naturalnick/mock-exchange"
 				/>
 				<Project
@@ -61,7 +60,6 @@ export default function Projects() {
 							responsive user experience.
 						</>
 					}
-					demoLink="http://burblechat.herokuapp.com"
 					sourceLink="https://github.com/naturalnick/chat-app"
 				/>
 				<Project
