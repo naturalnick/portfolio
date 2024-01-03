@@ -32,7 +32,7 @@ export default function Nav() {
 					href="#"
 					className="p-4 no-underline cursor-pointer text-gray-50 normal-case text-xl whitespace-nowrap"
 				>
-					<h1 className="font-josefinSans">NNS</h1>
+					<h1 className="font-josefinSans text-[#FFC857]">NNS</h1>
 				</a>
 			</div>
 			<div className="navbar-end hidden md:flex">
@@ -59,7 +59,7 @@ function LinkItems() {
 			<div>
 				<a
 					href={Nick_Schaefer_Resume}
-					className="btn btn-success ms-3"
+					className="btn btn-primary ms-3"
 					target="_blank"
 					rel="noreferrer"
 				>
