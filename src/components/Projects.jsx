@@ -29,8 +29,6 @@ export default function Projects() {
 							companions, etc and upload photos.
 						</>
 					}
-					videoLink="https://www.youtube.com/watch?v=8e0kK4cCC0c&t=1s"
-					siteLink="https://www.naybiz.com"
 				/>
 				<Project
 					image={mockexDashboard}
