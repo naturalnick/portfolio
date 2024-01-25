@@ -1,5 +1,3 @@
-import Nick_Schaefer_Resume from "../assets/Nick_Schaefer_Resume.pdf";
-
 export default function Nav() {
 	return (
 		<div className="navbar bg-base-100">
@@ -56,16 +54,6 @@ function LinkItems() {
 			<li className="justify-center">
 				<a href="#contact">Contact</a>
 			</li>
-			<div>
-				<a
-					href={Nick_Schaefer_Resume}
-					className="btn btn-primary ms-3"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Resume
-				</a>
-			</div>
 		</>
 	);
 }

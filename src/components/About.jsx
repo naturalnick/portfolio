@@ -23,9 +23,9 @@ export default function About() {
 					expand my skills.
 				</p>
 				<p className="pb-5">
-					Lately my time is spread between learning Swift and SwiftUI for
-					iOS development and my startup Naybiz, a web app for community
-					managers.
+					Lately my time is spread between learning Swift and SwiftUI
+					for iOS development and my startup Naybiz, a web app for
+					community managers.
 				</p>
 
 				<p className="pb-5">
@@ -62,7 +62,7 @@ export default function About() {
 					<img
 						src={bioPic}
 						alt="Bio Pic"
-						className="rounded-full max-w-[500px] object-cover"
+						className="rounded-full w-[100%] max-w-[500px] object-cover"
 					/>
 				</div>
 			</div>
