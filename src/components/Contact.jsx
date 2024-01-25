@@ -1,16 +1,53 @@
-import { useState } from "react";
+import { addDoc, collection } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { db } from "../firebase";
 
 export default function Contact() {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [message, setMessage] = useState("");
 	const [errors, setErrors] = useState();
+	const [formSent, setFormSent] = useState(false);
 
-	function sendEmail() {
-		if (checkForErrors()) console.log("send email");
+	useEffect(() => {
+		if (formSent && email !== "") {
+			setFormSent(false);
+			console.log("setFormSentfalse");
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [email]);
+
+	async function sendEmail() {
+		if (formValid()) {
+			await addMailForEmailTrigger(name, email, message);
+			setFormSent(true);
+			resetForm();
+		}
 	}
 
-	function checkForErrors() {
+	async function addMailForEmailTrigger(name, email, message) {
+		await addDoc(collection(db, "mail"), {
+			to: import.meta.env.VITE_TO_EMAIL,
+			message: {
+				subject: "Porfolio Contact Form - " + name,
+				html: `
+						<p><b>Name:</b> ${name}</p>
+						<p><b>Email:</b> ${email}</p>
+						<p><b>Message:</b> ${message}</p>
+						<br /><br />
+						<p>Submitted via the contact form at <a href="https://nschaefer.com/">nschaefer.com</a></p>
+						`,
+			},
+		});
+	}
+
+	function resetForm() {
+		setName("");
+		setEmail("");
+		setMessage("");
+	}
+
+	function formValid() {
 		const newErrors = {};
 		if (!name) newErrors.name = "Name is required.";
 		if (!email) newErrors.email = "Email is required.";
@@ -18,9 +55,9 @@ export default function Contact() {
 
 		if (Object.entries(newErrors).length > 0) {
 			setErrors(newErrors);
-			return true;
+			return false;
 		}
-		return false;
+		return true;
 	}
 
 	function handleChange(e) {
@@ -49,13 +86,12 @@ export default function Contact() {
 		>
 			<div className="container card bg-slate-100 text-neutral shadow-xl max-w-lg">
 				<div className="card-body">
-					<p className="text-xl font-semibold underline underline-offset-2 pb-6">
-						Contact Me
+					<p className="text-xl font-semibold underline underline-offset-2 pb-4">
+						I&apos;m All Ears
 					</p>
 					<p className="pb-3">
-						Whether you&apos;re looking to hire a software developer, want
-						to brainstorm ideas or collaborations, or have something else
-						you&apos;d like to discuss - feel free to reach out!
+						Fill out this form to contact me for app support,
+						employment opportunities, collaborations, etc...
 					</p>
 					<input
 						type="text"
@@ -64,7 +100,6 @@ export default function Contact() {
 						onChange={handleChange}
 						placeholder="Name"
 						className="input input-bordered w-full bg-white"
-						disabled
 					/>
 					{errors?.name && (
 						<small className="text-red-500">{errors.name}</small>
@@ -76,7 +111,6 @@ export default function Contact() {
 						onChange={handleChange}
 						placeholder="Email"
 						className="input input-bordered w-full bg-white"
-						disabled
 					/>
 					{errors?.email && (
 						<small className="text-red-500">{errors.email}</small>
@@ -88,7 +122,6 @@ export default function Contact() {
 						placeholder="Message"
 						className="textarea textarea-bordered w-full bg-white"
 						draggable
-						disabled
 					/>
 					{errors?.message && (
 						<small className="text-red-500">{errors.message}</small>
@@ -96,14 +129,10 @@ export default function Contact() {
 					<button
 						onClick={sendEmail}
 						className="btn btn-primary max-w-xs"
-						disabled
 					>
 						Send
 					</button>
-					<p>
-						Still setting up this form... In the meantime, reach me on
-						social media.
-					</p>
+					{formSent && <p>Form successfully submitted.</p>}
 				</div>
 			</div>
 		</div>
