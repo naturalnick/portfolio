@@ -154,7 +154,7 @@ function Project({
 								</button>
 							</a>
 						)}
-						{demoLink && (
+						{appLink && (
 							<a href={appLink} target="_blank" rel="noreferrer">
 								<button className="btn btn-neutral">
 									App Link
