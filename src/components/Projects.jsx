@@ -29,6 +29,10 @@ export default function Projects() {
 							companions, etc and upload photos.
 						</>
 					}
+					appLink={
+						"https://apps.apple.com/us/app/white-mountain-4000ft-tracker/id6476589208"
+					}
+					sourceLink={"https://github.com/naturalnick/Summits"}
 				/>
 				<Project
 					image={mockexDashboard}
@@ -110,6 +114,7 @@ function Project({
 	title,
 	description,
 	demoLink,
+	appLink,
 	siteLink,
 	sourceLink,
 	videoLink,
@@ -149,6 +154,13 @@ function Project({
 								</button>
 							</a>
 						)}
+						{demoLink && (
+							<a href={appLink} target="_blank" rel="noreferrer">
+								<button className="btn btn-neutral">
+									App Link
+								</button>
+							</a>
+						)}
 						{videoLink && (
 							<a
 								href={videoLink}
@@ -174,5 +186,6 @@ Project.propTypes = {
 	sourceLink: PropTypes.string,
 	siteLink: PropTypes.string,
 	demoLink: PropTypes.string,
+	appLink: PropTypes.string,
 	videoLink: PropTypes.string,
 };
