@@ -120,7 +120,7 @@ function Project({
 	videoLink,
 }) {
 	return (
-		<div className="card bg-base-100 shadow-xl max-w-md">
+		<div className="card bg-base-100 shadow-xl">
 			<figure>
 				<img src={image} alt="title" />
 			</figure>
