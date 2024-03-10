@@ -7,7 +7,7 @@ export default function About() {
 			className="lg:flex min-h-screen p-5 bg-gradient-to-b from-[#0C4A6E] via-[#0C4A6E] to-teal-600"
 		>
 			<div className="basis-2/4 p-20">
-				<p className="text-xl font-semibold underline underline-offset-2 pb-6">
+				<p className="text-2xl font-semibold underline-offset-2 pb-6">
 					About Me
 				</p>
 

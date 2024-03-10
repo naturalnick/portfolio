@@ -9,12 +9,12 @@ export default function Projects() {
 	return (
 		<div
 			id="projects"
-			className="flex flex-col items-center min-h-screen p-5 bg-teal-600"
+			className="flex flex-col items-center p-5 bg-teal-600"
 		>
-			<p className="text-xl font-semibold underline underline-offset-2 pb-6">
+			<p className="text-3xl font-semibold underline-offset-2 pb-6">
 				Projects
 			</p>
-			<div className="container md:columns-2 xl:columns-3 gap-10">
+			<div className="container grid lg:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-10">
 				<Project
 					image={appScreenshots}
 					title="White Mountain 4000-footer Tracker"
@@ -33,21 +33,6 @@ export default function Projects() {
 						"https://apps.apple.com/us/app/white-mountain-4000ft-tracker/id6476589208"
 					}
 					sourceLink={"https://github.com/naturalnick/Summits"}
-				/>
-				<Project
-					image={mockexDashboard}
-					title="Mock Exchange"
-					description={
-						<>
-							Crafted with React.js for the front-end and Python
-							for the back-end, this full-stack portfolio
-							application enables users to trade stocks with
-							simulated funds, accessing real-time stock data
-							through external REST APIs and tracking portfolio
-							changes after purchases.
-						</>
-					}
-					sourceLink="https://github.com/naturalnick/mock-exchange"
 				/>
 				<Project
 					image={naybiz}
@@ -70,6 +55,39 @@ export default function Projects() {
 					siteLink="https://www.naybiz.com"
 				/>
 				<Project
+					image={generateThumbnails}
+					title="Thumbnail Generator Extension for Firebase"
+					description={
+						<>
+							A cloud function for generating image thumbnails
+							from videos uploaded to Firebase deployed as a free
+							extension on Firebase Extensions Hub. This was a
+							freelance project converted into something I hope
+							people will find useful.
+							<br />
+							<br />
+							80+ installs
+						</>
+					}
+					sourceLink="https://github.com/naturalnick/firebase-extension-generate-thumbnails"
+					siteLink="https://extensions.dev/extensions/nickschaefer/storage-generate-thumbnails"
+				/>
+				<Project
+					image={mockexDashboard}
+					title="Mock Exchange"
+					description={
+						<>
+							Crafted with React.js for the front-end and Python
+							for the back-end, this full-stack portfolio
+							application enables users to trade stocks with
+							simulated funds, accessing real-time stock data
+							through external REST APIs and tracking portfolio
+							changes after purchases.
+						</>
+					}
+					sourceLink="https://github.com/naturalnick/mock-exchange"
+				/>
+				<Project
 					image={burble}
 					title="Burble"
 					description={
@@ -82,24 +100,6 @@ export default function Projects() {
 						</>
 					}
 					sourceLink="https://github.com/naturalnick/chat-app"
-				/>
-				<Project
-					image={generateThumbnails}
-					title="Thumbnail Generator Extension for Firebase"
-					description={
-						<>
-							A cloud function for generating image thumbnails
-							from videos uploaded to Firebase deployed as a free
-							extension on Firebase Extensions Hub. This was a
-							freelance project converted into something I hope
-							people will find useful.
-							<br />
-							<br />
-							60+ installs
-						</>
-					}
-					sourceLink="https://github.com/naturalnick/firebase-extension-generate-thumbnails"
-					siteLink="https://extensions.dev/extensions/nickschaefer/storage-generate-thumbnails"
 				/>
 			</div>
 			<p className="text-2xl animate-bounce mt-24">
@@ -120,59 +120,45 @@ function Project({
 	videoLink,
 }) {
 	return (
-		<div className="mb-10">
-			<div className="card bg-base-100 shadow-xl">
-				<figure>
-					<img src={image} alt="title" />
-				</figure>
-				<div className="card-body">
-					<h2 className="card-title">{title}</h2>
-					<p className="text-sm">{description}</p>
-					<div className="card-actions justify-end">
-						{sourceLink && (
-							<a
-								href={sourceLink}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<button className="btn btn-neutral">
-									Source Code
-								</button>
-							</a>
-						)}
-						{siteLink && (
-							<a href={siteLink} target="_blank" rel="noreferrer">
-								<button className="btn btn-neutral">
-									View Site
-								</button>
-							</a>
-						)}
-						{demoLink && (
-							<a href={demoLink} target="_blank" rel="noreferrer">
-								<button className="btn btn-neutral">
-									Demo
-								</button>
-							</a>
-						)}
-						{appLink && (
-							<a href={appLink} target="_blank" rel="noreferrer">
-								<button className="btn btn-neutral">
-									App Link
-								</button>
-							</a>
-						)}
-						{videoLink && (
-							<a
-								href={videoLink}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<button className="btn btn-neutral">
-									Video
-								</button>
-							</a>
-						)}
-					</div>
+		<div className="card bg-base-100 shadow-xl max-w-md">
+			<figure>
+				<img src={image} alt="title" />
+			</figure>
+			<div className="card-body">
+				<h2 className="card-title">{title}</h2>
+				<p className="text-sm">{description}</p>
+				<div className="card-actions justify-end">
+					{sourceLink && (
+						<a href={sourceLink} target="_blank" rel="noreferrer">
+							<button className="btn btn-neutral">
+								Source Code
+							</button>
+						</a>
+					)}
+					{siteLink && (
+						<a href={siteLink} target="_blank" rel="noreferrer">
+							<button className="btn btn-neutral">
+								View Site
+							</button>
+						</a>
+					)}
+					{demoLink && (
+						<a href={demoLink} target="_blank" rel="noreferrer">
+							<button className="btn btn-neutral">Demo</button>
+						</a>
+					)}
+					{appLink && (
+						<a href={appLink} target="_blank" rel="noreferrer">
+							<button className="btn btn-neutral">
+								App Link
+							</button>
+						</a>
+					)}
+					{videoLink && (
+						<a href={videoLink} target="_blank" rel="noreferrer">
+							<button className="btn btn-neutral">Video</button>
+						</a>
+					)}
 				</div>
 			</div>
 		</div>
