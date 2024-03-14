@@ -1,31 +1,23 @@
+import About from "./components/About";
+import Contact from "./components/Contact";
 import Hero from "./components/Hero";
 import Nav from "./components/Nav";
-import About from "./components/About";
 import Projects from "./components/Projects";
-import Contact from "./components/Contact";
 import { useScrollY } from "./hooks/useScrollY";
-import SectionMarker from "./components/SectionMarker";
 
 export default function App() {
 	const scrollY = useScrollY();
 	return (
 		<div>
-			<div id="top" className="flex flex-col min-h-screen">
-				<Nav />
-				<Hero />
-				<SectionMarker hidden={scrollY > 150} />
-			</div>
-
+			<Nav />
+			<Hero scrollY={scrollY} />
 			<About />
 			<Projects />
 			<Contact />
 			<footer className="footer footer-center p-10 bg-[#FFC857] text-neutral rounded">
 				<aside>
-					<p>Copyright © 2023 - All rights reserved by Nick Schaefer</p>
+					<p className="mt-20">Copyright © 2023 - Nick Schaefer</p>
 				</aside>
-				<a href="#top" className="btn btn-neutral">
-					Return To Top
-				</a>
 			</footer>
 		</div>
 	);
