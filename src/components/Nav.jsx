@@ -1,6 +1,8 @@
+import { useLocation } from "react-router-dom";
+
 export default function Nav() {
 	return (
-		<div className="navbar bg-base-100">
+		<div id="top" className="navbar bg-base-100">
 			<div className="navbar-start">
 				<div className="dropdown">
 					<label tabIndex={0} className="btn btn-ghost md:hidden">
@@ -27,7 +29,7 @@ export default function Nav() {
 					</ul>
 				</div>
 				<a
-					href="#"
+					href="/"
 					className="p-4 no-underline cursor-pointer text-gray-50 normal-case text-xl whitespace-nowrap"
 				>
 					<h1 className="font-josefinSans text-[#FFC857]">NNS</h1>
@@ -43,17 +45,26 @@ export default function Nav() {
 }
 
 function LinkItems() {
+	const location = useLocation();
 	return (
 		<>
-			<li className="justify-center">
-				<a href="#about">About</a>
-			</li>
-			<li className="justify-center">
-				<a href="#projects">Projects</a>
-			</li>
-			<li className="justify-center">
-				<a href="#contact">Contact</a>
-			</li>
+			{location.pathname === "/" ? (
+				<>
+					<li className="justify-center">
+						<a href="#about">About</a>
+					</li>
+					<li className="justify-center">
+						<a href="#projects">Projects</a>
+					</li>
+					<li className="justify-center">
+						<a href="#contact">Contact</a>
+					</li>
+				</>
+			) : (
+				<li className="justify-center">
+					<a href="/">Home</a>
+				</li>
+			)}
 		</>
 	);
 }

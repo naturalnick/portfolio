@@ -11,7 +11,7 @@ export default function Projects() {
 			id="projects"
 			className="flex flex-col items-center p-5 bg-teal-600"
 		>
-			<p className="text-3xl font-semibold underline-offset-2 pb-6">
+			<p className="text-3xl font-semibold underline-offset-2 pb-20">
 				Projects
 			</p>
 			<div className="container grid lg:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-10">
@@ -22,11 +22,15 @@ export default function Projects() {
 						<>
 							There are 48 4000-ft summits in the White Mountains
 							in New Hampshire and lots of hikers make it a goal
-							to hike all of them including me. I built this app
-							with SwiftUI for iOS 17+ and have published it to
-							the app store for free use and without ads. You can
-							log information about your hikes such as weather,
-							companions, etc and upload photos.
+							to hike all of them including me. With the app you
+							can log information about your hikes such as
+							weather, companions, etc and upload photos. It also
+							features a map-view of the area with custom markers
+							showing a unique perspective of your progress.
+							<br />
+							<br />
+							Built with Swift, SwiftUI and SwiftData and
+							published on the App Store for iOS 17+.
 						</>
 					}
 					appLink={
@@ -102,7 +106,7 @@ export default function Projects() {
 					sourceLink="https://github.com/naturalnick/chat-app"
 				/>
 			</div>
-			<p className="text-2xl animate-bounce mt-24">
+			<p className="text-2xl animate-bounce mt-[100px]">
 				I can&apos;t wait to show you what&apos;s next!
 			</p>
 		</div>
@@ -150,7 +154,7 @@ function Project({
 					{appLink && (
 						<a href={appLink} target="_blank" rel="noreferrer">
 							<button className="btn btn-neutral">
-								App Link
+								App Store
 							</button>
 						</a>
 					)}

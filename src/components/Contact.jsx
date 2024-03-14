@@ -82,7 +82,7 @@ export default function Contact() {
 	return (
 		<div
 			id="contact"
-			className="flex items-center p-5 bg-gradient-to-b from-teal-600 via-teal-600 to-[#FFC857]"
+			className="flex items-center p-5 pt-20 bg-gradient-to-b from-teal-600 via-teal-600 to-[#FFC857]"
 		>
 			<div className="container card bg-slate-100 text-neutral shadow-xl max-w-lg">
 				<div className="card-body">
