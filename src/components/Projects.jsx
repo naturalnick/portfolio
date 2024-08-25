@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import appScreenshots from "../assets/4000_app_screenshots.png";
 import burble from "../assets/burble.png";
 import generateThumbnails from "../assets/generate-thumbnails-code.png";
+import grownotes from "../assets/grownotes.png";
 import mockexDashboard from "../assets/mockex-dashboard.png";
 import naybiz from "../assets/naybiz.png";
 
@@ -15,6 +16,24 @@ export default function Projects() {
 				Projects
 			</p>
 			<div className="container grid lg:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-10">
+				<Project
+					image={grownotes}
+					title="GrowNotes - Garden Journal"
+					description={
+						<>
+							GrowNotes is a garden journal mobile app built with
+							React Native. Add plants and add journal entries to
+							track and remember key plant care events. Gardening
+							is all about learning and GrowNotes makes it easy to
+							remember important planting tasks. Available on
+							iPhone now.
+						</>
+					}
+					appLink={
+						"https://apps.apple.com/us/app/grownotes/id6479220212"
+					}
+					siteLink={"https://www.grow-notes.com/"}
+				/>
 				<Project
 					image={appScreenshots}
 					title="White Mountain 4000-footer Tracker"
