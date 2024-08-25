@@ -89,7 +89,7 @@ export default function Projects() {
 							people will find useful.
 							<br />
 							<br />
-							80+ installs
+							100+ installs
 						</>
 					}
 					sourceLink="https://github.com/naturalnick/firebase-extension-generate-thumbnails"
