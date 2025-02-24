@@ -26,7 +26,7 @@ export default function Contact() {
 
     async function addMailForEmailTrigger(name, email, message) {
         await addDoc(collection(db, "mail"), {
-            to: "wildernns@gmail.com",
+            to: import.meta.env.VITE_TO_EMAIL,
             message: {
                 subject: "Porfolio Contact Form - " + name,
                 html: `
